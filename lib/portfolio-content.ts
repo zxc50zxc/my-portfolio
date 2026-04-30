@@ -28,7 +28,11 @@ export const portfolioContent = {
     aboutBioEn:
       "Experienced in healthcare data management, EHR systems, and health information exchange with a strong focus on quality of care.",
     education: "بكالوريوس نظم معلومات صحية",
-    certifications: ["RHIA", "Certified HL7 Specialist", "HIPAA Security Training"],
+    certifications: [
+      "Healthcare AI Specialist Certificate",
+      "Certified Marketing Specialist: دورة مكثفة (45 ساعة) من جامعة الملك عبدالعزيز - مركز المبدعون",
+      "Data Analysis & Dashboard Expert",
+    ],
     formName: "الاسم",
     formEmail: "البريد الإلكتروني",
     formMessage: "الرسالة",
@@ -72,7 +76,11 @@ export const portfolioContent = {
     aboutBioEn:
       "Experienced in healthcare data management, EHR systems, and health information exchange.",
     education: "BSc in Health Information Systems",
-    certifications: ["RHIA", "Certified HL7 Specialist", "HIPAA Security Training"],
+    certifications: [
+      "Healthcare AI Specialist Certificate: Focused on integrating AI into healthcare systems",
+      "Certified Marketing Specialist: 45-hour intensive course by King Abdulaziz University - Al-Mubdioun Center",
+      "Data Analysis & Dashboard Expert: Advanced skills in Power BI and Streamlit for healthcare analytics",
+    ],
     formName: "Name",
     formEmail: "Email",
     formMessage: "Message",
@@ -91,33 +99,143 @@ export const portfolioContent = {
   },
 } as const;
 
-export const experiences = [
+export type TimelineIconKey =
+  | "trophy"
+  | "graduationCap"
+  | "bookOpen"
+  | "stethoscope"
+  | "briefcase"
+  | "target";
+
+export type TimelineEntry = {
+  id: string;
+  icon: TimelineIconKey;
+  periodAr: string;
+  periodEn: string;
+  titleAr: string;
+  titleEn: string;
+  orgAr: string;
+  orgEn: string;
+  pointsAr: string[];
+  pointsEn: string[];
+};
+
+export const experiences: TimelineEntry[] = [
   {
-    org: "Kingdom Health Network",
-    arTitle: "أخصائي معلوماتية صحية",
-    enTitle: "Health Informatics Specialist",
-    period: "2022 - Present",
-    descAr: "قيادة مبادرات تكامل السجلات الصحية وتحسين جودة البيانات السريرية عبر المستشفيات.",
-    descEn:
-      "Led EHR interoperability initiatives and improved clinical data quality across hospitals.",
+    id: "pre-university",
+    icon: "trophy",
+    periodAr: "قبل 2023",
+    periodEn: "Before 2023",
+    titleAr: "أنشطة ما قبل الجامعة",
+    titleEn: "Pre-University Activities",
+    orgAr: "الأنشطة الرياضية والجماعية",
+    orgEn: "Sports & Group Activities",
+    pointsAr: ["كرة القدم", "السباحة", "ركوب الخيل", "الرماية", "أنشطة جماعية"],
+    pointsEn: ["Football", "Swimming", "Horse Riding", "Shooting", "Group Activities"],
   },
   {
-    org: "Al Noor Medical Group",
-    arTitle: "أخصائي تنفيذ أنظمة EHR",
-    enTitle: "EHR Implementation Specialist",
-    period: "2019 - 2022",
-    descAr: "تنفيذ Epic وCerner وتدريب الفرق الطبية على سير العمل الرقمي.",
-    descEn:
-      "Implemented Epic and Cerner workflows and trained care teams on digital processes.",
+    id: "university-activities",
+    icon: "graduationCap",
+    periodAr: "2023 - 2026",
+    periodEn: "2023 - 2026",
+    titleAr: "الأنشطة الجامعية",
+    titleEn: "University Activities",
+    orgAr: "جمعية ظاهرة لبن / الهاكثون الصحي",
+    orgEn: "Dhahira Laban Association / Health Hackathon",
+    pointsAr: [
+      "2024: التنظيم في موسم الحج - المشاركة في تنظيم موسم الحج وتقديم الدعم للحجاج.",
+      "2025: تنظيم هاكثون - التنسيق بين الفرق المشاركة ودعم المشاركين.",
+    ],
+    pointsEn: [
+      "2024: Hajj Season Organization - Participated in organizing Hajj and supporting pilgrims.",
+      "2025: Hackathon Organization - Coordinated participating teams and supported attendees.",
+    ],
   },
   {
-    org: "CareData Analytics",
-    arTitle: "محلل بيانات صحية",
-    enTitle: "Data Analyst - Healthcare",
-    period: "2017 - 2019",
-    descAr: "بناء لوحات قياس وتحليل مؤشرات الأداء لدعم قرارات الإدارة الصحية.",
-    descEn:
-      "Built KPI dashboards and analytics pipelines for healthcare operational decisions.",
+    id: "training-courses",
+    icon: "bookOpen",
+    periodAr: "2023 - 2026",
+    periodEn: "2023 - 2026",
+    titleAr: "الدورات والتدريب",
+    titleEn: "Training & Courses",
+    orgAr: "التطوير المهني",
+    orgEn: "Professional Development",
+    pointsAr: [
+      "مهارات التسويق التجارية والشخصية",
+      "التصوير الفوتوغرافي",
+      "تصميم المواقع الإلكترونية",
+      "الأمن السيبراني",
+      "تحليل البيانات و Power BI",
+    ],
+    pointsEn: [
+      "Business & Personal Marketing Skills",
+      "Photography",
+      "Web Design",
+      "Cybersecurity",
+      "Data Analysis & Power BI",
+    ],
+  },
+  {
+    id: "internship",
+    icon: "stethoscope",
+    periodAr: "يناير 2026 - أبريل 2026",
+    periodEn: "Jan 2026 - Apr 2026",
+    titleAr: "متدرب أخصائي معلوماتية صحية",
+    titleEn: "Health Informatics Specialist (Intern)",
+    orgAr: "مستشفى الحرس الوطني - الشؤون الصحية بالحرس الوطني (MNGHA)",
+    orgEn: "National Guard Health Affairs (MNGHA)",
+    pointsAr: [
+      " عملت في إدخال الأدوية في نظام BestCare، و أعي تمامًا معايير HL7 لضمان انتقال البيانات بسلامة، وأطبق معايير HIPAA لضمان أمن وخصوصية المريض خلال سير العمل الرقمي.",
+      "إدارة بيانات الأدوية: إدارة وتحديث قائمة الأدوية في نظام BestCare لضمان دقة الجرعات والتوثيق السريري.",
+      "تحسين الأنظمة: التعاون مع فريق التحسين لتبسيط سير العمل الرقمي وتعزيز وظائف السجل الطبي الإلكتروني.",
+      "دعم سير العمل السريري: المساهمة في تحسين سجلات إعطاء الدواء (MAR) لتقليل الأخطاء ورفع سلامة المرضى.",
+    ],
+    pointsEn: [
+      "I do not only enter medications into the BestCare system; I also apply HL7 standards for safe data exchange and HIPAA standards to protect patient privacy and security throughout digital workflows.",
+      "Medication Data Management: Maintained and updated the BestCare medication formulary with accurate entries and documentation.",
+      "System Optimization: Collaborated with the improvement team to streamline digital workflows and improve EHR functionality.",
+      "Clinical Workflow Support: Helped refine medication administration records (MAR) to reduce errors and improve patient safety.",
+    ],
+  },
+  {
+    id: "current-job",
+    icon: "briefcase",
+    periodAr: "2023 - الآن",
+    periodEn: "2023 - Present",
+    titleAr: "إدارة مشاريع وتطوير رقمي",
+    titleEn: "Project Management",
+    orgAr: "رواد التقدم",
+    orgEn: "Rowad Al-Taqaddum",
+    pointsAr: [
+      "المشاركة في تأسيس الشركة والتدرج بأدوار متعددة (استقبال، محاسبة، تصميم، إدارة صفقات).",
+      "إدارة وتنسيق المشاريع بشكل احترافي ومتابعة سير العمل.",
+      "تطوير وإدارة الظهور الرقمي للشركة.",
+      "التواصل مع الفرق المختلفة وإعداد التقارير الدورية لضمان جودة التنفيذ.",
+    ],
+    pointsEn: [
+      "Managing and coordinating projects professionally.",
+      "Tracking progress and ensuring target delivery.",
+      "Collaborating with cross-functional teams to maintain implementation quality.",
+      "Preparing periodic reports on project progress.",
+    ],
+  },
+  {
+    id: "career-aspirations",
+    icon: "target",
+    periodAr: "قيد التقدم",
+    periodEn: "In Progress",
+    titleAr: "الطموحات المهنية",
+    titleEn: "Career Aspirations",
+    orgAr: "شهادات احترافية قيد الإنجاز",
+    orgEn: "Certifications in Progress",
+    pointsAr: [
+      "PMP (Project Management Professional) - قيد الإنجاز",
+      "Risk Management Professional Certification - قيد الإنجاز",
+    ],
+    pointsEn: [
+      "PMP (Project Management Professional) - In Progress",
+      "Risk Management Professional Certification - In Progress",
+    ],
   },
 ];
 

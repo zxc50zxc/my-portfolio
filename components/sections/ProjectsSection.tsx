@@ -1,8 +1,6 @@
 "use client";
 
-import { useRef } from "react";
 import { projects } from "@/lib/portfolio-content";
-import { useGsapHorizontalScroll } from "@/hooks/useGsapHorizontalScroll";
 
 type ProjectsSectionProps = {
   sectionTitle: string;
@@ -17,11 +15,6 @@ export function ProjectsSection({
   isArabic,
   isLight,
 }: ProjectsSectionProps) {
-  const pinRef = useRef<HTMLDivElement | null>(null);
-  const trackRef = useRef<HTMLDivElement | null>(null);
-
-  useGsapHorizontalScroll(pinRef, trackRef);
-
   return (
     <section id="projects" className="space-y-8">
       <div className="space-y-2" data-reveal>
@@ -29,16 +22,15 @@ export function ProjectsSection({
         <h2 className={`text-3xl font-semibold ${isLight ? "text-slate-800" : "text-zinc-100"}`}>{projectsTitle}</h2>
       </div>
       <div
-        ref={pinRef}
         className={`relative overflow-hidden rounded-2xl border px-2 py-8 md:px-4 ${
           isLight ? "border-slate-300 bg-slate-100/85" : "border-zinc-800 bg-zinc-950/30"
         }`}
       >
-        <div ref={trackRef} className="flex w-max gap-6 pb-4">
+        <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {projects.map((project) => (
             <article
               key={project}
-              className={`group w-[82vw] max-w-[430px] rounded-2xl border p-5 transition duration-300 hover:border-blue-500/60 hover:shadow-[0_0_32px_rgba(59,130,246,0.18)] ${
+              className={`group w-[82vw] max-w-[430px] shrink-0 snap-start rounded-2xl border p-5 transition duration-300 hover:border-blue-500/60 hover:shadow-[0_0_32px_rgba(59,130,246,0.18)] ${
                 isLight
                   ? "border-slate-300 bg-slate-100"
                   : "border-zinc-800 bg-zinc-900/50"
