@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Git stores remote URL, branch tracking, and other local-only data under `.git/`
+# (including `.git/config`). That directory is never part of commits or `git push`.
