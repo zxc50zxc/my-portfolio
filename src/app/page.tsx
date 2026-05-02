@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { PillNav } from "@/components/PillNav";
 import { AboutSection } from "@/components/sections/AboutSection";
@@ -14,7 +14,7 @@ import { useThemeMode } from "@/hooks/useThemeMode";
 import { portfolioContent, type Lang } from "@/lib/portfolio-content";
 
 export default function Home() {
-  const [lang, setLang] = useState<Lang>("ar");
+  const [lang, setLang] = useState<Lang>("en");
   const [copied, setCopied] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -25,6 +25,10 @@ export default function Home() {
   const t = portfolioContent[lang];
   const isArabic = lang === "ar";
   const isLight = resolvedTheme === "light";
+  useEffect(() => {
+    document.documentElement.lang = lang === "ar" ? "ar" : "en";
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  }, [lang]);
   useGsapReveal("#portfolio-root");
 
   const handleCopyEmail = async () => {
