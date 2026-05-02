@@ -117,6 +117,7 @@ export default function Home() {
           certifications={t.certifications}
           isArabic={isArabic}
           isLight={isLight}
+          photoAlt={t.brand}
         />
         <ContactSection
           sectionTitle={t.sectionContact}

@@ -259,3 +259,4 @@ export const projects = [
 
 export const contactEmail = "alghamdi.mhmd.d@gmail.com";
 export const cvFilePath = "/cv/mohammed-alghamdi-cv.pdf";
+export const profilePhotoPath = "/profile-photo.png";

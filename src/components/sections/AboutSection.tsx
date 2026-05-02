@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { profilePhotoPath } from "@/lib/portfolio-content";
+
 type AboutSectionProps = {
   sectionTitle: string;
   aboutTitle: string;
@@ -7,6 +10,7 @@ type AboutSectionProps = {
   certifications: readonly string[];
   isArabic: boolean;
   isLight: boolean;
+  photoAlt: string;
 };
 
 export function AboutSection({
@@ -18,6 +22,7 @@ export function AboutSection({
   certifications,
   isArabic,
   isLight,
+  photoAlt,
 }: AboutSectionProps) {
   return (
     <section
@@ -27,14 +32,19 @@ export function AboutSection({
       }`}
     >
       <div
-        className={`mx-auto flex h-52 w-52 items-center justify-center rounded-3xl border text-sm ${
-          isLight
-            ? "border-slate-300 bg-gradient-to-b from-slate-200 to-slate-300 text-slate-500"
-            : "border-zinc-700 bg-gradient-to-b from-zinc-800 to-zinc-900 text-zinc-400"
+        className={`relative mx-auto h-52 w-52 shrink-0 overflow-hidden rounded-3xl border ${
+          isLight ? "border-slate-300 bg-slate-200" : "border-zinc-700 bg-zinc-900"
         }`}
         data-reveal
       >
-        PHOTO
+        <Image
+          src={profilePhotoPath}
+          alt={photoAlt}
+          fill
+          sizes="208px"
+          className="object-cover object-top"
+          priority={false}
+        />
       </div>
       <div className="space-y-4" data-reveal>
         <p className="text-sm tracking-[0.2em] text-blue-400">{sectionTitle}</p>
