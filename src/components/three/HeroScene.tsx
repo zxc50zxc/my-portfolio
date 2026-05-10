@@ -285,13 +285,15 @@ export function HeroScene({ isLight = false }: { isLight?: boolean }) {
         isLight ? "border-slate-300 bg-slate-100/70" : "border-zinc-800 bg-zinc-900/30"
       }`}
     >
-      <Canvas camera={{ position: [0, 0.45, 5.25], fov: 45 }}>
+      <Canvas camera={{ position: [0.42, 0.2, 5.35], fov: 45 }}>
         <color attach="background" args={[canvasBg]} />
         <ambientLight intensity={isLight ? 0.78 : 0.5} />
         <directionalLight position={[4.2, 3.2, 2.2]} intensity={isLight ? 0.85 : 0.62} />
         <pointLight position={[-2.2, 1.6, 3.2]} intensity={0.48} color="#7dd3fc" />
-        <Float speed={0.95} rotationIntensity={0.22} floatIntensity={0.38}>
-          <HealthOrbitScene isLight={isLight} />
+        <Float speed={0.9} rotationIntensity={0.14} floatIntensity={0.34}>
+          <group rotation={[0.26, 0.14, -0.06]}>
+            <HealthOrbitScene isLight={isLight} />
+          </group>
         </Float>
       </Canvas>
     </div>

@@ -94,6 +94,7 @@ export default function Home() {
           tagline={t.tagline}
           ctaProjects={t.ctaProjects}
           ctaContact={t.ctaContact}
+          ctaRowad={t.ctaRowad}
           cv={t.cv}
           scroll={t.scroll}
           isArabic={isArabic}

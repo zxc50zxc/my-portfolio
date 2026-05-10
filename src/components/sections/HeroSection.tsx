@@ -1,5 +1,5 @@
 import { HeroScene } from "@/components/three/HeroScene";
-import { cvFilePath } from "@/lib/portfolio-content";
+import { cvFilePath, rowadPortfolioUrl } from "@/lib/portfolio-content";
 
 type HeroSectionProps = {
   title: string;
@@ -7,6 +7,7 @@ type HeroSectionProps = {
   tagline: string;
   ctaProjects: string;
   ctaContact: string;
+  ctaRowad: string;
   cv: string;
   scroll: string;
   isArabic: boolean;
@@ -19,6 +20,7 @@ export function HeroSection({
   tagline,
   ctaProjects,
   ctaContact,
+  ctaRowad,
   cv,
   scroll,
   isArabic,
@@ -61,6 +63,14 @@ export function HeroSection({
               className={`rounded-xl border px-6 py-3 text-sm font-medium transition hover:border-blue-500 hover:text-blue-300 ${isLight ? "border-slate-300 text-slate-700" : "border-zinc-700 text-zinc-200"}`}
             >
               {cv}
+            </a>
+            <a
+              href={rowadPortfolioUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`rounded-xl border px-6 py-3 text-sm font-medium transition hover:border-blue-500 hover:text-blue-300 ${isLight ? "border-slate-300 text-slate-700" : "border-zinc-700 text-zinc-200"}`}
+            >
+              {ctaRowad}
             </a>
           </div>
         </div>

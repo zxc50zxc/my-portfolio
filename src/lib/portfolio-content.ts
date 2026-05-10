@@ -11,6 +11,7 @@ export const portfolioContent = {
       "خبرة في إدارة بيانات الرعاية الصحية، أنظمة السجلات الصحية الإلكترونية، وتكامل تبادل المعلومات الصحية.",
     ctaContact: "تواصل معي",
     ctaProjects: "عرض المشاريع",
+    ctaRowad: "رواد التقدم — الأعمال",
     cv: "تحميل السيرة الذاتية",
     scroll: "اسحب للأسفل",
     sectionExperience: "الخبرات",
@@ -59,6 +60,7 @@ export const portfolioContent = {
       "Experienced in healthcare data management, EHR systems, and health information exchange.",
     ctaContact: "Contact Me",
     ctaProjects: "View Projects",
+    ctaRowad: "Rowad — Work",
     cv: "Download CV",
     scroll: "Scroll Down",
     sectionExperience: "Experience",
@@ -259,4 +261,5 @@ export const projects = [
 
 export const contactEmail = "alghamdi.mhmd.d@gmail.com";
 export const cvFilePath = "/cv/mohammed-alghamdi-cv.pdf";
+export const rowadPortfolioUrl = "https://rawad-z.netlify.app/#portfolio";
 export const profilePhotoPath = "/profile-photo.png";
