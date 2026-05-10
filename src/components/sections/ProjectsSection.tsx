@@ -26,10 +26,14 @@ export function ProjectsSection({
           isLight ? "border-slate-300 bg-slate-100/85" : "border-zinc-800 bg-zinc-950/30"
         }`}
       >
-        <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+        <div
+          dir="ltr"
+          className="flex snap-x snap-mandatory gap-6 overflow-x-auto overscroll-x-contain scroll-smooth touch-pan-x pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        >
           {projects.map((project) => (
             <article
               key={project}
+              dir={isArabic ? "rtl" : "ltr"}
               className={`group w-[82vw] max-w-[430px] shrink-0 snap-start rounded-2xl border p-5 transition duration-300 hover:border-blue-500/60 hover:shadow-[0_0_32px_rgba(59,130,246,0.18)] ${
                 isLight
                   ? "border-slate-300 bg-slate-100"
