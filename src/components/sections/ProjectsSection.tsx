@@ -49,7 +49,7 @@ export function ProjectsSection({
               >
                 {project.image ? (
                   <div
-                    className="h-full w-full scale-100 bg-cover bg-center transition duration-500 group-hover:scale-105"
+                    className="h-full w-full scale-100 bg-contain bg-center bg-no-repeat transition duration-500 group-hover:scale-105"
                     style={{ backgroundImage: `url(${project.image})` }}
                   />
                 ) : (

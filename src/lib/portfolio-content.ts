@@ -281,9 +281,12 @@ export const projects: PortfolioProject[] = [
     title: "EHR Integration Project",
     titleAr: "مشروع تكامل السجلات الصحية",
     description:
-      "A healthcare technology solution focused on interoperability, usability, and compliance.",
-    descriptionAr: "حل تقني يركز على تكامل البيانات الطبية، سهولة الاستخدام، والامتثال للمعايير الصحية.",
-    tags: ["FHIR", "HL7", "Compliance"],
+      "An enterprise EHR integration system for patients, doctors, admins, and nurses, with FastAPI services and FHIR-ready healthcare data exchange.",
+    descriptionAr:
+      "نظام تكامل للسجل الطبي الإلكتروني يدعم المرضى، الأطباء، الإدارة، والتمريض، مع خدمات FastAPI وتبادل بيانات صحي متوافق مع FHIR.",
+    tags: ["FastAPI", "FHIR", "EHR"],
+    image: "/projects/ehr-integration-project.png",
+    url: "https://ehr-integration-project.vercel.app/login",
   },
   {
     id: "healthcare-dashboard",
