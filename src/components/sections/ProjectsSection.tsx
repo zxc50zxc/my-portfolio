@@ -32,7 +32,7 @@ export function ProjectsSection({
         >
           {projects.map((project) => (
             <article
-              key={project}
+              key={project.id}
               dir={isArabic ? "rtl" : "ltr"}
               className={`group w-[82vw] max-w-[430px] shrink-0 snap-start rounded-2xl border p-5 transition duration-300 hover:border-blue-500/60 hover:shadow-[0_0_32px_rgba(59,130,246,0.18)] ${
                 isLight
@@ -47,16 +47,23 @@ export function ProjectsSection({
                     : "border-zinc-800 bg-gradient-to-br from-zinc-800 to-zinc-900"
                 }`}
               >
-                <div className="h-full w-full scale-100 bg-[radial-gradient(circle_at_20%_25%,rgba(59,130,246,0.22),transparent_45%)] transition duration-500 group-hover:scale-110" />
+                {project.image ? (
+                  <div
+                    className="h-full w-full scale-100 bg-cover bg-center transition duration-500 group-hover:scale-105"
+                    style={{ backgroundImage: `url(${project.image})` }}
+                  />
+                ) : (
+                  <div className="h-full w-full scale-100 bg-[radial-gradient(circle_at_20%_25%,rgba(59,130,246,0.22),transparent_45%)] transition duration-500 group-hover:scale-110" />
+                )}
               </div>
-              <h3 className={`mb-2 text-xl font-semibold ${isLight ? "text-slate-800" : "text-zinc-100"}`}>{project}</h3>
+              <h3 className={`mb-2 text-xl font-semibold ${isLight ? "text-slate-800" : "text-zinc-100"}`}>
+                {isArabic ? project.titleAr : project.title}
+              </h3>
               <p className={`mb-4 text-sm leading-6 ${isLight ? "text-slate-600" : "text-zinc-300"}`}>
-                {isArabic
-                  ? "حل تقني يركز على تكامل البيانات الطبية، سهولة الاستخدام، والامتثال للمعايير الصحية."
-                  : "A healthcare technology solution focused on interoperability, usability, and compliance."}
+                {isArabic ? project.descriptionAr : project.description}
               </p>
               <div className="flex flex-wrap gap-2">
-                {["FHIR", "SQL", "Analytics"].map((tag) => (
+                {project.tags.map((tag) => (
                   <span
                     key={tag}
                     className={`rounded-md border px-2.5 py-1 text-xs ${
@@ -69,6 +76,16 @@ export function ProjectsSection({
                   </span>
                 ))}
               </div>
+              {project.url ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-500"
+                >
+                  {isArabic ? "فتح المشروع" : "Open Project"}
+                </a>
+              ) : null}
             </article>
           ))}
         </div>

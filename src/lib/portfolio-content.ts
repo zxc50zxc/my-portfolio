@@ -252,11 +252,66 @@ export const skills = [
   "HIPAA Compliance & Security",
 ];
 
-export const projects = [
-  "EHR Integration Project",
-  "Healthcare Dashboard",
-  "Medical Data Analysis Tool",
-  "FHIR API Implementation",
+export type PortfolioProject = {
+  id: string;
+  title: string;
+  titleAr: string;
+  description: string;
+  descriptionAr: string;
+  tags: string[];
+  image?: string;
+  url?: string;
+};
+
+export const projects: PortfolioProject[] = [
+  {
+    id: "smart-healthcare-appointment-system",
+    title: "Smart Healthcare Appointment System",
+    titleAr: "نظام ذكي لحجز المواعيد الطبية",
+    description:
+      "An AI-powered healthcare appointment platform built with Streamlit and Python, featuring patient booking, intelligent scheduling, doctor dashboards, and admin analytics.",
+    descriptionAr:
+      "منصة ذكية لحجز المواعيد الطبية مبنية باستخدام Streamlit وPython، تشمل حجز المرضى، الجدولة الذكية، لوحة الطبيب، وتحليلات الإدارة.",
+    tags: ["Streamlit", "Python", "AI", "Healthcare"],
+    image: "/projects/smart-healthcare-appointment-system.png",
+    url: "https://smart-healthcare-appointment-system.streamlit.app",
+  },
+  {
+    id: "ehr-integration-project",
+    title: "EHR Integration Project",
+    titleAr: "مشروع تكامل السجلات الصحية",
+    description:
+      "A healthcare technology solution focused on interoperability, usability, and compliance.",
+    descriptionAr: "حل تقني يركز على تكامل البيانات الطبية، سهولة الاستخدام، والامتثال للمعايير الصحية.",
+    tags: ["FHIR", "HL7", "Compliance"],
+  },
+  {
+    id: "healthcare-dashboard",
+    title: "Healthcare Dashboard",
+    titleAr: "لوحة بيانات صحية",
+    description:
+      "A healthcare analytics dashboard for tracking operational indicators and turning data into actionable insights.",
+    descriptionAr: "لوحة تحليلات صحية لمتابعة المؤشرات التشغيلية وتحويل البيانات إلى قرارات قابلة للتنفيذ.",
+    tags: ["Power BI", "SQL", "Analytics"],
+  },
+  {
+    id: "medical-data-analysis-tool",
+    title: "Medical Data Analysis Tool",
+    titleAr: "أداة تحليل البيانات الطبية",
+    description:
+      "A data analysis workflow for exploring clinical datasets and surfacing quality and performance trends.",
+    descriptionAr: "مسار عمل لتحليل البيانات الطبية واستكشاف مؤشرات الجودة والأداء من البيانات السريرية.",
+    tags: ["Python", "Data", "Quality"],
+  },
+  {
+    id: "fhir-api-implementation",
+    title: "FHIR API Implementation",
+    titleAr: "تطبيق واجهات FHIR",
+    description:
+      "A standards-based API implementation concept for exchanging healthcare information safely and consistently.",
+    descriptionAr: "تصور لتطبيق واجهات برمجية مبنية على المعايير لتبادل المعلومات الصحية بشكل آمن ومتسق.",
+    tags: ["FHIR", "API", "Interoperability"],
+  },
 ];
 
 export const contactEmail = "alghamdi.mhmd.d@gmail.com";
